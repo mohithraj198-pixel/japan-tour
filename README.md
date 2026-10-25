@@ -1,8 +1,14 @@
 # JAPAN TOURS • Ultra-Luxury 10-Day Curated Expedition
 
-A production-ready, client-facing single-page website for **JAPAN TOURS**, showcasing an ultra-luxury 10-day curated expedition across Osaka, Kyoto, and Tokyo.
+> 🔗 **Live Demo:** [japan-tour-blue.vercel.app](https://japan-tour-blue.vercel.app/)
 
-Built on a solid pitch-black (`#000000`) canvas with luminous neon violet, magenta, and electric cyan accents, paired exclusively with Google's DM Sans typography.
+A production-ready, client-facing single-page website for **JAPAN TOURS**, showcasing an ultra-luxury 10-day curated expedition across Osaka, Kyoto, and Tokyo. 
+
+### Core Features Overview
+- **Pure Dark Mode Aesthetics:** Deep pitch-black (`#000000`) canvas with luminous neon violet, magenta, and electric cyan accents.
+- **Interactive 3D Fluid Visual:** Inertia-damped 3D perspective mouse tilt and mobile harmonic oscillation with 300-frame scroll animation.
+- **Photo Lightbox Modal:** Full-screen pop-up modal with radial edge blending, metadata specs, and keyboard navigation.
+- **Responsive & Modern Architecture:** Fluid typography, glassmorphism cards, and seamless multi-device layout.
 
 ---
 

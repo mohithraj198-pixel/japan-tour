@@ -6,15 +6,12 @@
   <title>JAPAN TOURS • Luxury 10-Day Curated Expedition</title>
   <meta name="description" content="A curated 10-day ultra-luxury expedition across Osaka, Kyoto, and Tokyo with private cultural guides, 5-star sanctuaries, and first-class Shinkansen transit.">
 
-  <!-- Google Font: DM Sans (Enforced globally) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
-  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -34,28 +31,22 @@
     }
   </script>
 
-  <!-- Modular Luxury Design System Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="selection:bg-white selection:text-black relative bg-black text-white">
 
-  <!-- ================= BACKGROUND CANVAS ANIMATION LAYER ================= -->
   <div id="canvas-container">
     <canvas id="animation-canvas"></canvas>
   </div>
   <div id="canvas-overlay"></div>
 
-  <!-- Interactive Cursor Spotlight Glow (Desktop Only) -->
   <div id="cursor-spotlight"></div>
 
-  <!-- MAIN SCROLLABLE WEBPAGE CONTENT -->
   <div class="relative z-10">
 
-    <!-- ================= 1. TOP NAVBAR ================= -->
     <header class="sticky top-0 z-50 w-full backdrop-blur-2xl bg-black/85 border-b border-white/10 transition-colors">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        
-        <!-- Brand Logo with Outlined Globe Icon -->
+
         <a href="#" class="flex items-center gap-3 group text-decoration-none">
           <div class="w-8 h-8 rounded-lg border border-white/80 flex items-center justify-center bg-black/80 group-hover:bg-white transition-colors duration-300">
             <i data-lucide="globe" class="w-4 h-4 text-white group-hover:text-black transition-colors"></i>
@@ -66,7 +57,6 @@
           </div>
         </a>
 
-        <!-- Center Pill Menu -->
         <nav class="hidden md:flex items-center gap-1 bg-[#0a0a0a]/80 backdrop-blur-md border border-white/15 px-3 py-1.5 rounded-full text-xs uppercase tracking-widest text-white/70">
           <a href="#about" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">About</a>
           <a href="#included" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Included</a>
@@ -75,22 +65,18 @@
           <a href="#contacts" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Contacts</a>
         </nav>
 
-        <!-- Right Actions: Real-Time JST Clock, Zen Audio & Primary CTA -->
         <div class="flex items-center gap-3">
-          
-          <!-- Real-Time Tokyo JST Clock Ticker -->
+
           <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-md text-white/80 font-mono text-[11px]" title="Current Time in Tokyo (JST)">
             <span class="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse"></span>
             <span class="text-white/50 text-[10px] tracking-wider uppercase">TOKYO</span>
             <span id="jstClockTicker" class="font-bold tracking-wide text-white">--:--:-- JST</span>
           </div>
 
-          <!-- Ambient Zen Chime Button -->
           <button id="zenAudioBtn" onclick="toggleZenAudio()" class="w-9 h-9 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:border-white transition-all backdrop-blur-md" title="Toggle Ambient Zen Chime">
             <i data-lucide="volume-x" id="zenAudioIcon" class="w-4 h-4"></i>
           </button>
 
-          <!-- High-Contrast Primary "Book" Button -->
           <button onclick="openBookingDrawer()" class="opticore-primary-btn">
             <span>Book</span>
             <span class="icon-chip">
@@ -103,13 +89,11 @@
       </div>
     </header>
 
-    <!-- ================= 2. HERO SECTION ================= -->
     <section id="hero" class="relative pt-16 pb-28 border-b border-white/10 overflow-hidden">
       <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-        
-        <!-- Left Column: Opticore Text Layout -->
+
         <div class="lg:col-span-7 space-y-7">
-          
+
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/20 bg-black/60 backdrop-blur-md text-xs tracking-widest uppercase text-white/90">
             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
             01 / IMMERSIVE EXPEDITION
@@ -128,7 +112,6 @@
             All routes, private logistics, and dining pre-arranged so you simply enjoy the journey.
           </p>
 
-          <!-- 5 Interactive Showcase Cards / Tags matching reference specifications -->
           <div class="flex flex-wrap gap-2.5 pt-2">
             <button onclick="openPhotoLightbox('tokyo-shibuya')" class="opticore-capsule-tag cursor-pointer group" title="Inspect Tokyo Shibuya Visual">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-white/70 group-hover:text-white transition-colors"></i>
@@ -152,7 +135,6 @@
             </button>
           </div>
 
-          <!-- Pill Action Buttons & Slide Indicators -->
           <div class="flex flex-wrap items-center gap-6 pt-4">
             <a href="#process" class="opticore-pill-btn text-sm">
               <span>Explore Itinerary</span>
@@ -161,7 +143,6 @@
               </span>
             </a>
 
-            <!-- Slide Indicator Navigation Controls -->
             <div class="flex items-center gap-3 border border-white/15 px-4 py-2 rounded-full bg-[#0a0a0a]/80 backdrop-blur-md">
               <span class="text-xs font-mono text-white/70" id="heroSlideIndicator">01 / 03</span>
               <div class="flex items-center gap-1.5">
@@ -177,26 +158,22 @@
 
         </div>
 
-        <!-- Right Column: Interactive Circular Vortex Orb Sculpture with Down-Arrow Indicator -->
         <div class="lg:col-span-5 flex justify-center relative">
           <div id="vortexInteractiveZone" class="rotator-3d-wrap relative w-full max-w-[420px] aspect-square flex items-center justify-center cursor-pointer select-none">
-            
-            <!-- Ambient Volumetric Glow Halo -->
+
             <div id="vortexGlowHalo" class="absolute inset-0 rounded-full pointer-events-none transition-all duration-300"
                  style="background: radial-gradient(circle, rgba(255, 0, 127, 0.35) 0%, rgba(138, 43, 226, 0.28) 40%, rgba(0, 240, 255, 0.15) 60%, rgba(0, 0, 0, 0) 80%); filter: blur(45px);">
             </div>
 
-            <!-- Vortex Click Shockwave Ring -->
             <div id="vortexShockwave" class="absolute top-1/2 left-1/2 w-48 h-48 rounded-full border-2 border-white/70 pointer-events-none opacity-0"></div>
 
-            <!-- Rotator Interactive Target with 3D Spring Damping -->
             <div id="vortexTarget" 
                  onclick="triggerOrbBurst(event)"
                  class="rotator-interactive-target w-full h-full relative flex items-center justify-center">
 
               <div class="animate-fluid-popup w-full h-full flex items-center justify-center">
                 <div class="animate-orb-breathe w-full h-full flex items-center justify-center relative">
-                  
+
                   <svg viewBox="0 0 500 500" class="w-full h-full filter drop-shadow-[0_25px_60px_rgba(255,0,127,0.45)]">
                     <defs>
                       <linearGradient id="vortexOuterSweep" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -233,7 +210,6 @@
                       </linearGradient>
                     </defs>
 
-                    <!-- Concentric Sweeping Layers -->
                     <circle cx="250" cy="250" r="225" fill="url(#vortexOuterSweep)" opacity="0.95" />
                     <path d="M 120,240 C 110,130 190,60 300,55 C 410,50 470,140 460,250 C 450,350 370,440 260,450 C 180,455 125,410 160,340 C 190,280 280,290 320,260 C 370,220 370,160 310,130 C 240,100 170,150 145,210 Z" 
                           fill="url(#vortexMidFlow)" opacity="0.9" />
@@ -244,13 +220,11 @@
                           d="M 175,200 C 210,150 280,150 330,195 C 285,170 220,175 185,215 C 178,212 172,206 175,200 Z" 
                           fill="url(#crescentGleam)" />
 
-                    <!-- Floating Luminous Specks -->
                     <circle cx="210" cy="98" r="4.5" fill="#FFFFFF" class="animate-dot-1 filter drop-shadow-[0_0_8px_#ffffff]" />
                     <circle cx="365" cy="188" r="3.5" fill="#FFFFFF" class="animate-dot-2 filter drop-shadow-[0_0_8px_#ffffff]" />
                     <circle cx="160" cy="325" r="4.5" fill="#00F0FF" class="animate-dot-1 filter drop-shadow-[0_0_10px_#00F0FF]" />
                   </svg>
 
-                  <!-- Down-Arrow Scroll Indicator Pill -->
                   <a href="#about" 
                      aria-label="Scroll down to About section"
                      class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#111111] border border-white/25 flex items-center justify-center text-white hover:bg-white hover:text-black hover:border-white transition-all shadow-2xl z-20 group">
@@ -262,7 +236,6 @@
 
             </div>
 
-            <!-- Dynamic Live Rotation & Tracking HUD Tag -->
             <div class="absolute -top-4 right-0 px-3 py-1 rounded-full border border-white/15 bg-black/85 backdrop-blur-md text-[10px] font-mono text-white/70 uppercase tracking-widest pointer-events-none flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping"></span>
               <span>ANGLE: <span id="vortexAngleReadout">0°</span></span>
@@ -273,7 +246,6 @@
 
       </div>
 
-      <!-- Center Rotating Badge Seal -->
       <div class="relative flex justify-center -mb-10 z-20 mt-8">
         <div class="relative w-28 h-28 rounded-full border border-white/20 bg-black/90 backdrop-blur-md flex items-center justify-center shadow-2xl p-2">
           <div class="absolute inset-0 spin-seal flex items-center justify-center">
@@ -293,10 +265,8 @@
       </div>
     </section>
 
-    <!-- ================= 3. ABOUT SECTION WITH ASCENDING FLAME PETAL SCULPTURE ================= -->
     <section id="about" class="relative py-32 border-b border-white/10 overflow-hidden">
-      
-      <!-- Giant Background Stroke Typography "ABOUT" (0.10 Opacity) -->
+
       <div class="absolute right-4 top-1/2 -translate-y-1/2 select-none pointer-events-none z-0">
         <span class="stroke-watermark text-[23vw] font-black opacity-10">
           ABOUT
@@ -304,26 +274,23 @@
       </div>
 
       <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Column: ASCENDING FLAME PETAL ARTWORK -->
+
         <div class="lg:col-span-5 flex justify-center relative">
           <div id="flameInteractiveZone" class="rotator-3d-wrap relative w-full max-w-[380px] aspect-[4/5] flex items-center justify-center cursor-pointer select-none">
-            
+
             <div class="absolute inset-0 rounded-full pointer-events-none transition-all duration-300"
                  style="background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, rgba(255, 0, 127, 0.22) 45%, rgba(0, 0, 0, 0) 75%); filter: blur(40px);">
             </div>
 
-            <!-- Flame Click Shockwave Ring -->
             <div id="flameShockwave" class="absolute top-1/2 left-1/2 w-48 h-48 rounded-full border-2 border-white/70 pointer-events-none opacity-0"></div>
 
-            <!-- Rotator Interactive Target -->
             <div id="flameTarget" 
                  onclick="triggerFlameBurst(event)"
                  class="rotator-interactive-target w-full h-full relative flex items-center justify-center">
 
               <div class="animate-fluid-popup w-full h-full flex items-center justify-center">
                 <div class="animate-flame-sway w-full h-full flex items-center justify-center relative">
-                  
+
                   <svg viewBox="0 0 400 500" class="w-full h-full filter drop-shadow-[0_20px_50px_rgba(138,43,226,0.5)]">
                     <defs>
                       <linearGradient id="flameBodyGrad" x1="0%" y1="100%" x2="80%" y2="0%">
@@ -346,7 +313,6 @@
                       </radialGradient>
                     </defs>
 
-                    <!-- Ascending Stylized Ribbon Petal Form -->
                     <path d="M 200,450 
                              C 120,440 60,370 70,290 
                              C 78,210 160,160 170,90 
@@ -356,7 +322,6 @@
                              C 340,450 270,460 200,450 Z" 
                           fill="url(#flameBodyGrad)" opacity="0.95" />
 
-                    <!-- Swirling Interior Flume -->
                     <path d="M 190,410 
                              C 150,380 130,330 145,280 
                              C 165,210 240,190 220,120 
@@ -366,7 +331,6 @@
                              C 260,420 220,430 190,410 Z" 
                           fill="url(#petalAccent1)" opacity="0.8" />
 
-                    <!-- 3 Aligned Colored Accent Spheres -->
                     <circle cx="130" cy="180" r="14" fill="#00F0FF" class="filter drop-shadow-[0_0_12px_#00F0FF]" />
                     <circle cx="280" cy="220" r="18" fill="url(#sphereGlowGrad)" class="filter drop-shadow-[0_0_15px_#FF007F]" />
                     <circle cx="200" cy="70" r="10" fill="#FFFFFF" class="filter drop-shadow-[0_0_10px_#ffffff]" />
@@ -377,7 +341,6 @@
 
             </div>
 
-            <!-- Dynamic Live Rotation Readout for Flame -->
             <div class="absolute -top-4 right-0 px-3 py-1 rounded-full border border-white/15 bg-black/85 backdrop-blur-md text-[10px] font-mono text-white/70 uppercase tracking-widest pointer-events-none flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-[#FF007F] animate-pulse"></span>
               <span>FLAME: <span id="flameAngleReadout">0°</span></span>
@@ -386,10 +349,9 @@
           </div>
         </div>
 
-        <!-- Right Column: Opticore Text Layout -->
         <div class="lg:col-span-7 space-y-6">
           <span class="text-xs uppercase tracking-widest text-white/50 font-mono">ABOUT THE TOUR</span>
-          
+
           <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
             We’ve planned a simple and convenient 10-day itinerary for your trip to Japan.
           </h2>
@@ -406,7 +368,6 @@
               </span>
             </button>
 
-            <!-- Secondary Carousel Indicator -->
             <div class="flex items-center gap-3 font-mono text-xs text-white/60">
               <span class="text-white font-bold">01</span>
               <div class="w-12 h-[1px] bg-white/20 relative">
@@ -420,10 +381,8 @@
       </div>
     </section>
 
-    <!-- ================= 4. WHAT'S INCLUDED (SERVICES GRID) ================= -->
     <section id="included" class="relative py-32 border-b border-white/10 overflow-hidden">
-      
-      <!-- Giant Background Stroke Typography "SERVICES" (0.10 Opacity) -->
+
       <div class="absolute left-6 top-10 select-none pointer-events-none z-0">
         <span class="stroke-watermark text-[18vw] font-black opacity-10">
           SERVICES
@@ -431,7 +390,7 @@
       </div>
 
       <div class="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         <div class="max-w-2xl mb-16 space-y-3">
           <span class="text-xs uppercase tracking-widest text-white/50 font-mono">WHAT IS INCLUDED</span>
           <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -439,10 +398,8 @@
           </h2>
         </div>
 
-        <!-- 4-Card Bento Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          <!-- Card 1: Guides -->
           <div class="rounded-3xl p-7 border border-white/15 glass-card flex flex-col justify-between hover:border-white transition-all duration-300 group">
             <div>
               <div class="w-12 h-12 rounded-2xl border border-white/20 bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-105 transition-transform">
@@ -461,7 +418,6 @@
             </div>
           </div>
 
-          <!-- Card 2: Flights -->
           <div class="rounded-3xl p-7 border border-white/15 glass-card flex flex-col justify-between hover:border-white transition-all duration-300 group">
             <div>
               <div class="w-12 h-12 rounded-2xl border border-white/20 bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-105 transition-transform">
@@ -480,7 +436,6 @@
             </div>
           </div>
 
-          <!-- Card 3: Transfers -->
           <div class="rounded-3xl p-7 border border-white/15 glass-card flex flex-col justify-between hover:border-white transition-all duration-300 group">
             <div>
               <div class="w-12 h-12 rounded-2xl border border-white/20 bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-105 transition-transform">
@@ -499,7 +454,6 @@
             </div>
           </div>
 
-          <!-- Card 4: Hotels -->
           <div class="rounded-3xl p-7 border border-white/15 glass-card flex flex-col justify-between hover:border-white transition-all duration-300 group">
             <div>
               <div class="w-12 h-12 rounded-2xl border border-white/20 bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-105 transition-transform">
@@ -520,7 +474,6 @@
 
         </div>
 
-        <!-- Center Bottom Primary Action Button -->
         <div class="flex justify-center mt-12">
           <button onclick="openBookingDrawer()" class="opticore-primary-btn">
             <span>Reserve 10-Day Experience</span>
@@ -531,10 +484,9 @@
       </div>
     </section>
 
-    <!-- ================= 5. TRAVEL PROGRAM ACCORDION (A-01 to D-04) ================= -->
     <section id="process" class="relative py-32 border-b border-white/10">
       <div class="max-w-7xl mx-auto px-6">
-        
+
         <div class="mb-14 space-y-3">
           <span class="text-xs uppercase tracking-widest text-white/50 font-mono">HOW THE TOUR UNFOLDS</span>
           <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -542,10 +494,8 @@
           </h2>
         </div>
 
-        <!-- Accordion Rows: A-01, B-02 (Featured Active), C-03, D-04 -->
         <div class="space-y-4">
 
-          <!-- 01 | A-01 Osaka -->
           <div class="rounded-3xl border border-white/15 glass-card p-6 sm:p-8 transition-all hover:border-white">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer" onclick="toggleProcessRow('step-1')">
               <div class="flex items-center gap-6">
@@ -565,27 +515,42 @@
             </div>
 
             <div id="step-1" class="max-h-0 overflow-hidden transition-all duration-300 opacity-0">
-              <div class="pt-6 mt-6 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
-                  <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1">Day 1: Arrival &amp; Dotonbori</h4>
-                  <p class="text-xs text-white/70 leading-relaxed">Airport transfer to hotel. Evening food walk through Dotonbori for Takoyaki, Okonomiyaki, and neon photo spots.</p>
+              <div class="pt-6 mt-6 border-t border-white/10">
+
+                <div onclick="openPhotoLightbox('osaka-dotonbori')" class="photo-card-clickable img-luxury-blend relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden mb-6 border border-white/15 group" title="Click to inspect photo in high definition">
+                  <img src="assets/images/osaka-dotonbori-night.jpg" alt="Osaka Dotonbori Canal Blue Hour &amp; Glico Signboard" class="w-full h-full object-cover transition-transform duration-700" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all flex items-center justify-center pointer-events-none">
+                    <div class="w-12 h-12 rounded-full border border-white/30 bg-black/75 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:scale-100 scale-75 transition-all duration-300 shadow-2xl">
+                      <i data-lucide="maximize-2" class="w-5 h-5"></i>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                    <span class="text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full bg-black/85 border border-white/20 text-white">Osaka • Dotonbori Canal Twilight</span>
+                  </div>
                 </div>
-                <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
-                  <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1">Day 2: Osaka Castle &amp; Umeda</h4>
-                  <p class="text-xs text-white/70 leading-relaxed">Explore historic Osaka Castle ramparts followed by sunset observation at the Umeda Sky Building.</p>
-                </div>
-                <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
-                  <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1">Day 3: Nara Day Excursion</h4>
-                  <p class="text-xs text-white/70 leading-relaxed">Short train trip to meet the sacred deer in Nara Park and visit the Great Buddha hall at Todai-ji.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1">Day 1: Arrival &amp; Dotonbori</h4>
+                    <p class="text-xs text-white/70 leading-relaxed">Airport transfer to hotel. Evening food walk through Dotonbori for Takoyaki, Okonomiyaki, and neon photo spots.</p>
+                  </div>
+                  <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1">Day 2: Osaka Castle &amp; Umeda</h4>
+                    <p class="text-xs text-white/70 leading-relaxed">Explore historic Osaka Castle ramparts followed by sunset observation at the Umeda Sky Building.</p>
+                  </div>
+                  <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1">Day 3: Nara Day Excursion</h4>
+                    <p class="text-xs text-white/70 leading-relaxed">Short train trip to meet the sacred deer in Nara Park and visit the Great Buddha hall at Todai-ji.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 02 | B-02 Kyoto (Featured Active Banner with Iridescent Backdrop) -->
           <div class="iridescent-border">
             <div class="rounded-[27px] bg-[#0c0c0c]/85 backdrop-blur-xl p-6 sm:p-8 transition-all relative overflow-hidden">
-              
+
               <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-gradient-to-tr from-[#FF007F]/20 via-[#8A2BE2]/20 to-[#00F0FF]/15 blur-3xl pointer-events-none"></div>
 
               <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer relative z-10" onclick="toggleProcessRow('step-2')">
@@ -607,7 +572,7 @@
 
               <div id="step-2" class="max-h-[900px] overflow-hidden transition-all duration-300 opacity-100 relative z-10">
                 <div class="pt-6 mt-6 border-t border-white/20">
-                  <!-- Kyoto Featured Visual with Lightbox Trigger & Edge Melting -->
+
                   <div onclick="openPhotoLightbox('fushimi-torii')" class="photo-card-clickable img-luxury-blend relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden mb-6 border border-white/20 group" title="Click to inspect photo in high definition">
                     <img src="assets/images/fushimi-torii-editorial.jpg" alt="Fushimi Inari Torii Gates" class="w-full h-full object-cover transition-transform duration-700" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
@@ -640,7 +605,6 @@
             </div>
           </div>
 
-          <!-- 03 | C-03 Tokyo -->
           <div class="rounded-3xl border border-white/15 glass-card p-6 sm:p-8 transition-all hover:border-white">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer" onclick="toggleProcessRow('step-3')">
               <div class="flex items-center gap-6">
@@ -661,7 +625,7 @@
 
             <div id="step-3" class="max-h-0 overflow-hidden transition-all duration-300 opacity-0">
               <div class="pt-6 mt-6 border-t border-white/10">
-                <!-- Tokyo Featured Visual with Lightbox Trigger & Edge Melting -->
+
                 <div onclick="openPhotoLightbox('tokyo-shibuya')" class="photo-card-clickable img-luxury-blend relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden mb-6 border border-white/15 group" title="Click to inspect photo in high definition">
                   <img src="assets/images/tokyo-shibuya-night.jpg" alt="Tokyo Shibuya Crossing Neon Rain" class="w-full h-full object-cover transition-transform duration-700" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
@@ -697,7 +661,6 @@
             </div>
           </div>
 
-          <!-- 04 | D-04 Wrap-Up & Extensions -->
           <div class="rounded-3xl border border-white/15 glass-card p-6 sm:p-8 transition-all hover:border-white">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer" onclick="toggleProcessRow('step-4')">
               <div class="flex items-center gap-6">
@@ -735,9 +698,8 @@
       </div>
     </section>
 
-    <!-- ================= 6. HORIZONTAL FLUID WAVE BANNER ================= -->
     <section class="relative py-28 border-b border-white/10 overflow-hidden flex items-center justify-center">
-      
+
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-85">
         <svg viewBox="0 0 1440 320" class="w-full h-auto" preserveAspectRatio="none">
           <defs>
@@ -768,10 +730,9 @@
       </div>
     </section>
 
-    <!-- ================= 6.5 VISUAL EDITORIAL GALLERY WITH LIGHTBOX ================= -->
     <section id="gallery" class="py-32 border-b border-white/10 relative">
       <div class="max-w-7xl mx-auto px-6">
-        
+
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div class="space-y-3">
             <span class="text-xs uppercase tracking-widest text-white/50 font-mono">03 / VISUAL SHOWCASE</span>
@@ -784,10 +745,8 @@
           </p>
         </div>
 
-        <!-- 6-Asset Bento Photography Grid with Lightbox Pop-ups & Edge Melting -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <!-- Card 1: Hero Kimono Fuji -->
           <div onclick="openPhotoLightbox('hero-kimono')" class="photo-card-clickable img-luxury-blend group relative rounded-3xl overflow-hidden border border-white/15 bg-black h-[420px] transition-all hover:border-white" title="Click to view full inspection">
             <img src="assets/images/hero-kimono-fuji.jpg" alt="Dawn Over Valley Framing Mount Fuji" class="w-full h-full object-cover transition-transform duration-700" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
@@ -805,7 +764,6 @@
             </div>
           </div>
 
-          <!-- Card 2: Tokyo Shibuya Crossing -->
           <div onclick="openPhotoLightbox('tokyo-shibuya')" class="photo-card-clickable img-luxury-blend group relative rounded-3xl overflow-hidden border border-white/15 bg-black h-[420px] transition-all hover:border-white" title="Click to view full inspection">
             <img src="assets/images/tokyo-shibuya-night.jpg" alt="Tokyo Shibuya Crossing After Rain" class="w-full h-full object-cover transition-transform duration-700" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
@@ -823,7 +781,6 @@
             </div>
           </div>
 
-          <!-- Card 3: Mount Fuji Twilight Lake -->
           <div onclick="openPhotoLightbox('fuji-twilight')" class="photo-card-clickable img-luxury-blend group relative rounded-3xl overflow-hidden border border-white/15 bg-black h-[420px] transition-all hover:border-white" title="Click to view full inspection">
             <img src="assets/images/fuji-twilight-lake.jpg" alt="Mount Fuji Twilight Lake Kawaguchi" class="w-full h-full object-cover transition-transform duration-700" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
@@ -841,7 +798,6 @@
             </div>
           </div>
 
-          <!-- Card 4: Artisan Ramen Macro -->
           <div onclick="openPhotoLightbox('artisan-ramen')" class="photo-card-clickable img-luxury-blend group relative rounded-3xl overflow-hidden border border-white/15 bg-black h-[420px] transition-all hover:border-white" title="Click to view full inspection">
             <img src="assets/images/artisan-ramen-macro.jpg" alt="Artisan Tonkotsu Ramen" class="w-full h-full object-cover transition-transform duration-700" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
@@ -859,7 +815,6 @@
             </div>
           </div>
 
-          <!-- Card 5: Kyoto Gion Lanterns -->
           <div onclick="openPhotoLightbox('kyoto-gion')" class="photo-card-clickable img-luxury-blend group relative rounded-3xl overflow-hidden border border-white/15 bg-black h-[420px] transition-all hover:border-white" title="Click to view full inspection">
             <img src="assets/images/kyoto-gion-lanterns.jpg" alt="Kyoto Gion District Alleys at Dusk" class="w-full h-full object-cover transition-transform duration-700" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
@@ -877,7 +832,6 @@
             </div>
           </div>
 
-          <!-- Card 6: Fushimi Inari Torii Pathway -->
           <div onclick="openPhotoLightbox('fushimi-torii')" class="photo-card-clickable img-luxury-blend group relative rounded-3xl overflow-hidden border border-white/15 bg-black h-[420px] transition-all hover:border-white" title="Click to view full inspection">
             <img src="assets/images/fushimi-torii-editorial.jpg" alt="Fushimi Inari Torii Pathway" class="w-full h-full object-cover transition-transform duration-700" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
@@ -900,7 +854,6 @@
       </div>
     </section>
 
-    <!-- ================= 7. CURATED PARTNERS GRID ================= -->
     <section class="py-24 border-b border-white/10 text-center relative">
       <div class="max-w-7xl mx-auto px-6 space-y-8">
         <span class="text-xs uppercase tracking-[0.25em] text-white/50 font-mono">OUR CURATED PARTNERS</span>
@@ -928,111 +881,230 @@
       </div>
     </section>
 
-    <!-- ================= 8. CONTACT & RESERVATION SECTION ================= -->
-    <section id="contacts" class="py-32 border-b border-white/10 relative">
-      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Column: Miniature Swirl Orb with Pop-Up & Live Badges -->
-        <div class="lg:col-span-5 flex justify-center relative">
-          <div class="relative w-full max-w-[360px] aspect-square flex items-center justify-center">
+    <section id="contacts" class="py-24 sm:py-32 border-b border-white/10 relative overflow-hidden bg-gradient-to-b from-black via-[#040812] to-black">
+      <div class="absolute -top-40 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#00F0FF]/10 via-[#8A2BE2]/10 to-[#FF007F]/10 blur-[120px] pointer-events-none"></div>
+      <div class="absolute -bottom-40 right-10 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#0a2040]/30 via-[#00F0FF]/05 to-transparent blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+
+          <div class="lg:col-span-5 flex flex-col">
+            <div class="relative w-full h-full min-h-[440px] sm:min-h-[500px] lg:min-h-full rounded-3xl overflow-hidden border border-white/15 bg-black group flex flex-col justify-between p-8 sm:p-10 shadow-2xl transition-all duration-500 hover:border-white/30">
+              
+              <img src="assets/images/osaka-dotonbori-night.jpg" 
+                   alt="Osaka Dotonbori at Blue Hour" 
+                   class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105" />
+
+              <div class="absolute inset-0 bg-gradient-to-t from-[#040711] via-[#040711]/60 to-[#040711]/30"></div>
+              <div class="absolute inset-0 bg-[#001026]/20 mix-blend-multiply"></div>
+
+              <div class="relative z-10 flex items-center justify-between">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/20 bg-black/60 backdrop-blur-md">
+                  <span class="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse"></span>
+                  <span class="text-[10px] font-mono uppercase tracking-[0.22em] text-white/90">YOUR NEXT CHAPTER &bull; JAPAN</span>
+                </div>
+                <div class="w-8 h-8 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center text-white/70">
+                  <i data-lucide="compass" class="w-4 h-4"></i>
+                </div>
+              </div>
+
+              <div class="relative z-10 pt-36 sm:pt-48 space-y-4">
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight drop-shadow-md">
+                  Japan is closer than you think.
+                </h3>
+                <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-light max-w-md drop-shadow">
+                  From neon-lit streets to timeless traditions, let us help you plan a journey worth remembering.
+                </p>
+                <div class="pt-2 flex items-center gap-3 text-[11px] font-mono tracking-widest uppercase text-white/60">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                  <span>TOKYO &bull; OSAKA &bull; KYOTO</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 rounded-3xl p-7 sm:p-10 md:p-12 border border-white/15 bg-[#090b12]/95 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.85)] flex flex-col justify-between relative">
             
-            <div class="absolute inset-0 rounded-full pointer-events-none"
-                 style="background: radial-gradient(circle, rgba(255, 0, 127, 0.28) 0%, rgba(138, 43, 226, 0.22) 45%, rgba(0, 0, 0, 0) 75%); filter: blur(35px);">
+            <div class="mb-8 space-y-2">
+              <span class="text-xs uppercase tracking-widest text-white/50 font-mono">CONCIERGE &amp; RESERVATIONS</span>
+              <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
+                Every great journey starts with a conversation.
+              </h3>
+              <p class="text-xs sm:text-sm text-white/65 font-light leading-relaxed">
+                Tell us what you're dreaming of. We'll help you plan your perfect Japan experience.
+              </p>
             </div>
 
-            <div class="animate-fluid-popup w-full h-full flex items-center justify-center">
-              <div class="animate-orb-breathe w-full h-full flex items-center justify-center">
-                <svg viewBox="0 0 500 500" class="w-full h-full filter drop-shadow-[0_20px_45px_rgba(138,43,226,0.4)]">
-                  <circle cx="250" cy="250" r="225" fill="url(#vortexOuterSweep)" opacity="0.95" />
-                  <path d="M 120,240 C 110,130 190,60 300,55 C 410,50 470,140 460,250 C 450,350 370,440 260,450 C 180,455 125,410 160,340 C 190,280 280,290 320,260 C 370,220 370,160 310,130 C 240,100 170,150 145,210 Z" 
-                        fill="url(#vortexMidFlow)" opacity="0.9" />
-                  <ellipse cx="250" cy="245" rx="145" ry="135" fill="url(#vortexCoreDepths)" />
-                  <path class="animate-crescent" 
-                        d="M 175,200 C 210,150 280,150 330,195 C 285,170 220,175 185,215 C 178,212 172,206 175,200 Z" 
-                        fill="url(#crescentGleam)" />
-                  <circle cx="210" cy="98" r="4.5" fill="#FFFFFF" />
-                  <circle cx="160" cy="325" r="4.5" fill="#00F0FF" />
-                </svg>
+            <form id="contactJourneyForm" onsubmit="handleContactJourneySubmit(event)" novalidate class="space-y-5">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contactFullName" class="block text-xs uppercase tracking-wider text-white/70 mb-2 font-mono">
+                    Full Name <span class="text-red-400">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="contactFullName" 
+                    name="name" 
+                    required 
+                    placeholder="e.g. Alexander Vance"
+                    class="opticore-input w-full h-12"
+                    autocomplete="name"
+                  >
+                  <span id="nameError" class="block text-[11px] text-red-400 font-mono mt-1 hidden">Please enter your full name.</span>
+                </div>
+
+                <div>
+                  <label for="contactEmailAddress" class="block text-xs uppercase tracking-wider text-white/70 mb-2 font-mono">
+                    Email Address <span class="text-red-400">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="contactEmailAddress" 
+                    name="email" 
+                    required 
+                    placeholder="alexander@domain.com"
+                    class="opticore-input w-full h-12"
+                    autocomplete="email"
+                  >
+                  <span id="emailError" class="block text-[11px] text-red-400 font-mono mt-1 hidden">Please enter a valid email address.</span>
+                </div>
               </div>
-            </div>
 
-            <!-- Floating Badges -->
-            <div class="absolute -top-3 left-4 px-3.5 py-1.5 rounded-full border border-white/20 bg-black/90 backdrop-blur-md shadow-2xl flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping"></span>
-              <span class="text-[11px] font-mono tracking-wider text-white uppercase">24/7 Concierge</span>
-            </div>
-            <div class="absolute -bottom-3 right-4 px-3.5 py-1.5 rounded-full border border-white/20 bg-black/90 backdrop-blur-md shadow-2xl flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#FF007F]"></span>
-              <span class="text-[11px] font-mono tracking-wider text-white uppercase">Instant Callback</span>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Right Column: Contact & Request Form -->
-        <div class="lg:col-span-7 rounded-3xl p-8 sm:p-12 border border-white/20 glass-card">
-          
-          <div class="mb-8 space-y-2">
-            <span class="text-xs uppercase tracking-widest text-white/50 font-mono">GET IN TOUCH</span>
-            <h3 class="text-2xl sm:text-3xl font-bold text-white">Want to join us, but still have questions?</h3>
-            <p class="text-xs text-white/60">Leave a request and our tour directors will connect within 15 minutes.</p>
-          </div>
-
-          <form id="requestForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-            <div>
-              <label class="block text-xs uppercase tracking-wider text-white/60 mb-2 font-mono">Your name</label>
-              <input 
-                type="text" 
-                required 
-                placeholder="e.g. Alexander Smith"
-                class="opticore-input w-full"
-              >
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs uppercase tracking-wider text-white/60 mb-2 font-mono">Phone number</label>
-                <input 
-                  type="tel" 
-                  required 
-                  placeholder="+1 (555) 000-0000"
-                  class="opticore-input w-full"
-                >
+                <label for="contactPhoneNumber" class="block text-xs uppercase tracking-wider text-white/70 mb-2 font-mono">
+                  Phone Number <span class="text-white/40 font-normal lowercase">(optional)</span>
+                </label>
+                <div class="flex gap-2.5">
+                  <select 
+                    id="contactCountryCode" 
+                    class="h-12 px-3 rounded-xl border border-white/15 bg-black/80 text-white text-xs font-mono focus:border-white focus:outline-none transition-all cursor-pointer shrink-0"
+                    style="color-scheme: dark;"
+                    aria-label="Country Code"
+                  >
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+81" selected>🇯🇵 +81</option>
+                    <option value="+61">🇦🇺 +61</option>
+                    <option value="+49">🇩🇪 +49</option>
+                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+971">🇦🇪 +971</option>
+                  </select>
+                  <input 
+                    type="tel" 
+                    id="contactPhoneNumber" 
+                    name="phone" 
+                    placeholder="(555) 000-0000"
+                    class="opticore-input flex-1 h-12"
+                    autocomplete="tel"
+                  >
+                </div>
               </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contactDestinationSelect" class="block text-xs uppercase tracking-wider text-white/70 mb-2 font-mono">
+                    Destination <span class="text-red-400">*</span>
+                  </label>
+                  <select 
+                    id="contactDestinationSelect" 
+                    name="destination" 
+                    required
+                    class="opticore-input w-full h-12 appearance-none cursor-pointer"
+                    style="color-scheme: dark;"
+                  >
+                    <option value="" disabled selected>Select Destination</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Osaka">Osaka</option>
+                    <option value="Kyoto">Kyoto</option>
+                    <option value="Explore All Japan">Explore All Japan</option>
+                  </select>
+                  <span id="destError" class="block text-[11px] text-red-400 font-mono mt-1 hidden">Please select a destination.</span>
+                </div>
+
+                <div>
+                  <label for="contactTravelDateInput" class="block text-xs uppercase tracking-wider text-white/70 mb-2 font-mono">
+                    Preferred Travel Date
+                  </label>
+                  <input 
+                    type="date" 
+                    id="contactTravelDateInput" 
+                    name="travelDate" 
+                    class="opticore-input w-full h-12 cursor-pointer"
+                    style="color-scheme: dark;"
+                  >
+                </div>
+              </div>
+
               <div>
-                <label class="block text-xs uppercase tracking-wider text-white/60 mb-2 font-mono">Email address</label>
-                <input 
-                  type="email" 
-                  required 
-                  placeholder="alexander@domain.com"
-                  class="opticore-input w-full"
-                >
+                <label class="block text-xs uppercase tracking-wider text-white/70 mb-2 font-mono">
+                  Number of Travellers
+                </label>
+                <div class="flex items-center justify-between border border-white/15 px-4 py-2.5 rounded-xl bg-black/60 backdrop-blur-md">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-white/60"></i>
+                    <span class="text-xs text-white/80">Guests joining the journey</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <button 
+                      type="button" 
+                      onclick="changeJourneyTravelers(-1)" 
+                      class="w-8 h-8 rounded-lg border border-white/20 bg-white/5 text-white flex items-center justify-center font-bold hover:bg-white/15 active:scale-95 transition-all"
+                      aria-label="Decrease travelers"
+                    >-</button>
+                    <span id="journeyTravelersDisplay" class="font-mono font-bold text-sm text-white w-5 text-center">2</span>
+                    <button 
+                      type="button" 
+                      onclick="changeJourneyTravelers(1)" 
+                      class="w-8 h-8 rounded-lg border border-white/20 bg-white/5 text-white flex items-center justify-center font-bold hover:bg-white/15 active:scale-95 transition-all"
+                      aria-label="Increase travelers"
+                    >+</button>
+                    <input type="hidden" id="journeyTravelersInput" value="2">
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div>
-              <label class="block text-xs uppercase tracking-wider text-white/60 mb-2 font-mono">Comment</label>
-              <textarea 
-                rows="3" 
-                placeholder="Questions about flights, room preferences, or departure dates..."
-                class="opticore-input w-full resize-none"
-              ></textarea>
-            </div>
+              <div>
+                <label for="contactTripNotes" class="block text-xs uppercase tracking-wider text-white/70 mb-2 font-mono">
+                  Tell Us About Your Trip
+                </label>
+                <textarea 
+                  id="contactTripNotes" 
+                  name="notes"
+                  rows="3" 
+                  placeholder="Share your travel interests, ideal pacing, Michelin dining wishes, ryokan preferences, questions..."
+                  class="opticore-input w-full resize-none py-3.5 leading-relaxed text-sm"
+                ></textarea>
+              </div>
 
-            <div class="pt-4 flex items-center justify-between">
-              <button type="submit" id="submitFormBtn" class="opticore-primary-btn text-sm">
-                <span>Submit Request</span>
-                <span class="icon-chip">
-                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </span>
-              </button>
-              <span class="text-xs text-white/40 font-mono">&lt; 15 min response guaranteed</span>
-            </div>
-          </form>
+              <div id="contactFormAlert" class="hidden p-4 rounded-xl border border-red-500/40 bg-red-950/40 text-red-200 text-xs flex items-start gap-3">
+                <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 mt-0.5 text-red-400"></i>
+                <span id="contactFormAlertText"></span>
+              </div>
 
-          <div id="formToast" class="hidden mt-6 p-4 rounded-2xl border border-white bg-black/90 backdrop-blur-md text-center">
-            <p class="text-sm font-bold text-white">Your request has been received!</p>
-            <p class="text-xs text-white/70 mt-1">Our tour specialist will contact you with full 10-day details.</p>
+              <div class="pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <button 
+                  type="submit" 
+                  id="planJourneyBtn" 
+                  class="bg-white text-black font-semibold text-xs uppercase tracking-wider rounded-full px-8 py-4 flex items-center justify-center gap-3 hover:bg-white/95 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                >
+                  <span id="planJourneyBtnText">Plan My Journey</span>
+                  <span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                  </span>
+                </button>
+                <div class="flex items-center gap-2 text-xs text-white/50 font-mono">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#00F0FF]"></span>
+                  <span>Bespoke 10-Day Private Itinerary</span>
+                </div>
+              </div>
+
+            </form>
+
           </div>
 
         </div>
@@ -1040,7 +1112,6 @@
       </div>
     </section>
 
-    <!-- ================= 9. GIANT OUTLINED WATERMARK STRIP ================= -->
     <div class="w-full overflow-hidden select-none pointer-events-none py-14 border-b border-white/10">
       <div class="whitespace-nowrap text-center">
         <span class="stroke-watermark text-[16vw] font-black uppercase tracking-tighter block leading-none">
@@ -1049,10 +1120,9 @@
       </div>
     </div>
 
-    <!-- ================= 10. FOOTER ================= -->
     <footer class="bg-black/90 backdrop-blur-xl py-12 relative z-20">
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        
+
         <a href="#" class="flex items-center gap-3">
           <div class="w-7 h-7 rounded-md border border-white flex items-center justify-center bg-black">
             <span class="text-[10px] font-bold text-white">JP</span>
@@ -1081,12 +1151,11 @@
       </div>
     </footer>
 
-  </div> <!-- End Main Content Wrap -->
+  </div> 
 
-  <!-- ================= BOOKING DRAWER & PRICE CALCULATOR MODAL ================= -->
   <div id="bookingModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden items-center justify-center p-4">
     <div id="bookingCard" class="border border-white/20 bg-[#0a0a0a] rounded-3xl max-w-lg w-full p-8 relative shadow-[0_0_50px_rgba(255,255,255,0.08)]">
-      
+
       <button onclick="closeBookingDrawer()" class="absolute top-6 right-6 text-white/60 hover:text-white p-2" aria-label="Close Booking Modal">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
@@ -1144,7 +1213,6 @@
     </div>
   </div>
 
-  <!-- ================= INCLUSIONS MODAL ================= -->
   <div id="infoModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl hidden items-center justify-center p-4">
     <div id="infoCard" class="border border-white/20 bg-[#0a0a0a] rounded-3xl max-w-md w-full p-8 relative">
       <button onclick="closeInfoModal()" class="absolute top-6 right-6 text-white/60 hover:text-white p-2" aria-label="Close Inclusions Modal">
@@ -1159,56 +1227,46 @@
     </div>
   </div>
 
-  <!-- ================= PHOTO LIGHTBOX MODAL ================= -->
   <div id="photoLightboxModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 md:p-8">
-    <!-- Backdrop Overlay with Deep Pitch-Black Blur -->
+
     <div id="lightboxBackdrop" onclick="closePhotoLightbox()" class="absolute inset-0 bg-black/85 backdrop-blur-2xl cursor-pointer"></div>
 
-    <!-- Modal Floating Glass Container -->
     <div id="lightboxCard" class="relative z-10 w-full max-w-5xl rounded-3xl border border-white/20 bg-[#070707]/95 backdrop-blur-2xl shadow-[0_0_90px_rgba(0,0,0,0.95),0_0_35px_rgba(255,255,255,0.08)] overflow-hidden max-h-[92vh] flex flex-col md:flex-row">
-      
-      <!-- Top-right Dismiss Button -->
+
       <button onclick="closePhotoLightbox()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full border border-white/25 bg-black/75 backdrop-blur-md flex items-center justify-center text-white/70 hover:text-white hover:border-white hover:bg-black transition-all group" title="Close (Escape)">
         <i data-lucide="x" class="w-4 h-4 group-hover:rotate-90 transition-transform duration-300"></i>
       </button>
 
-      <!-- Left / Top: High-Resolution Photo Viewer with Luxury Edge Blending -->
       <div class="md:w-1/2 relative bg-black flex items-center justify-center overflow-hidden min-h-[300px] md:min-h-[520px] img-luxury-blend">
         <img id="lightboxImg" src="" alt="" class="w-full h-full object-cover transition-transform duration-700" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none md:hidden"></div>
       </div>
 
-      <!-- Right / Bottom: Detailed Tour Context Box -->
       <div class="md:w-1/2 p-6 sm:p-8 md:p-10 flex flex-col justify-between overflow-y-auto max-h-[58vh] md:max-h-[92vh] space-y-6">
         <div class="space-y-4">
-          
-          <!-- Location Badge Tag -->
+
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/20 bg-white/5 text-[11px] font-mono tracking-wider uppercase text-white/90">
             <span class="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse"></span>
             <span id="lightboxTag">Location Tag</span>
           </div>
 
-          <!-- Bold Title -->
           <h3 id="lightboxTitle" class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
             Title
           </h3>
 
-          <!-- Multi-line Description -->
           <p id="lightboxDesc" class="text-xs sm:text-sm text-white/75 leading-relaxed font-light">
             Description
           </p>
 
-          <!-- Quick Tour Specs -->
           <div class="pt-3 border-t border-white/10 space-y-2">
             <div class="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-1">Expedition Highlights &amp; Specs:</div>
             <div id="lightboxSpecs" class="space-y-2">
-              <!-- Dynamically Populated -->
+
             </div>
           </div>
 
         </div>
 
-        <!-- Action / Booking Row -->
         <div class="pt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
           <button onclick="bookCurrentExperience()" class="opticore-primary-btn text-xs sm:text-sm">
             <span>Book This Experience</span>
@@ -1227,7 +1285,58 @@
     </div>
   </div>
 
-  <!-- Main Modular Application JavaScript -->
+  <div id="journeySuccessModal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4">
+    <div id="journeySuccessBackdrop" onclick="closeJourneySuccessModal()" class="absolute inset-0 bg-black/85 backdrop-blur-2xl cursor-pointer"></div>
+
+    <div id="journeySuccessCard" class="relative z-10 w-full max-w-lg rounded-3xl border border-white/20 bg-[#090b14]/95 backdrop-blur-2xl p-8 sm:p-10 shadow-[0_0_90px_rgba(0,0,0,0.95),0_0_35px_rgba(255,255,255,0.08)] text-center space-y-6">
+      
+      <div class="w-16 h-16 rounded-full border border-white/25 bg-gradient-to-tr from-[#00F0FF]/20 via-[#8A2BE2]/25 to-[#FF007F]/20 flex items-center justify-center mx-auto text-white shadow-[0_0_30px_rgba(0,240,255,0.25)] animate-pulse">
+        <i data-lucide="plane-takeoff" class="w-8 h-8 text-white"></i>
+      </div>
+
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/5 text-[10px] font-mono tracking-widest uppercase text-white/80">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#00F0FF]"></span>
+          <span>ENQUIRY CONFIRMED</span>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Your journey starts here.
+        </h3>
+        <p class="text-xs sm:text-sm text-white/70 leading-relaxed font-light max-w-md mx-auto">
+          Thank you for sharing your travel plans. Your enquiry has been received. Our dedicated Japan tour director will review your preferences and connect with you shortly.
+        </p>
+      </div>
+
+      <div class="p-5 rounded-2xl border border-white/15 bg-white/[0.03] space-y-3 text-left">
+        <div class="text-[10px] font-mono uppercase tracking-widest text-white/40 border-b border-white/10 pb-2">
+          Expedition Summary
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-white/60">Destination:</span>
+          <span id="successDestinationDisplay" class="font-semibold text-white">Osaka</span>
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-white/60">Preferred Date:</span>
+          <span id="successDateDisplay" class="font-mono text-white">Flexible</span>
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-white/60">Number of Travellers:</span>
+          <span id="successTravelersDisplay" class="font-mono text-white">2 Guests</span>
+        </div>
+        <div class="flex items-center justify-between text-xs pt-1 border-t border-white/10">
+          <span class="text-white/40 font-mono text-[11px]">Enquiry Reference:</span>
+          <span id="successRefIdDisplay" class="font-mono text-white/90 text-[11px]">JP-XXXXX</span>
+        </div>
+      </div>
+
+      <button onclick="closeJourneySuccessModal()" class="opticore-pill-btn w-full justify-center text-xs">
+        <span>Close</span>
+        <span class="icon-chip"><i data-lucide="x" class="w-3.5 h-3.5"></i></span>
+      </button>
+
+    </div>
+  </div>
+
   <script src="assets/js/main.js"></script>
 
 </body>

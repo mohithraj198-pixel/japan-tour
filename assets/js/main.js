@@ -1,21 +1,14 @@
-/**
- * JAPAN TOURS • LUXURY CLIENT-FACING APPLICATION JAVASCRIPT
- * Optics, Physics, Web Audio & Lightbox Engine
- */
 
 (function () {
   'use strict';
 
-  // =========================================================================
-  // 1. REAL-TIME JST (JAPAN STANDARD TIME) CLOCK TICKER
-  // =========================================================================
   function initJSTClock() {
     const clockEl = document.getElementById('jstClockTicker');
     if (!clockEl) return;
 
     function update() {
       const now = new Date();
-      // Format time in Tokyo time zone (UTC+9)
+
       const options = {
         timeZone: 'Asia/Tokyo',
         hour12: false,
@@ -31,9 +24,6 @@
     setInterval(update, 1000);
   }
 
-  // =========================================================================
-  // 2. 300-FRAME IMAGE SEQUENCE FIXED CANVAS SCROLL ENGINE
-  // =========================================================================
   function initScrollAnimation() {
     const canvas = document.getElementById('animation-canvas');
     if (!canvas) return;
@@ -91,7 +81,6 @@
       const iw = img.naturalWidth;
       const ih = img.naturalHeight;
 
-      // Center crop cover
       const scale = Math.max(cw / iw, ch / ih);
       const sw = iw * scale;
       const sh = ih * scale;
@@ -141,9 +130,6 @@
     requestAnimationFrame(tick);
   }
 
-  // =========================================================================
-  // 3. DYNAMIC CURSOR SPOTLIGHT (Disabled on Touch)
-  // =========================================================================
   function initSpotlight() {
     const spotlight = document.getElementById('cursor-spotlight');
     if (!spotlight) return;
@@ -160,9 +146,6 @@
     });
   }
 
-  // =========================================================================
-  // 4. ADVANCED 3D PERSPECTIVE ROTATOR ENGINE WITH MOBILE HARMONIC FALLBACK
-  // =========================================================================
   class RotatorFollower {
     constructor({ containerId, targetId, readoutId, maxTilt = 22, rotMultiplier = 1, onSpeedChange = null }) {
       this.container = document.getElementById(containerId);
@@ -186,7 +169,6 @@
       this.cursorSpeed = 0;
       this.isHovered = false;
 
-      // Touch & coarse pointer performance check
       this.isTouch = window.matchMedia('(hover: none) or (pointer: coarse)').matches;
 
       this.init();
@@ -210,7 +192,7 @@
           this.targetTiltY = 0;
         });
       } else {
-        // Touch device fallback: fluid interactive taps without mousemove overhead
+
         this.container.addEventListener('touchstart', () => {
           this.targetScale = 1.08;
           this.targetRotateZ += 30;
@@ -258,7 +240,7 @@
 
     animateLoop() {
       if (this.isTouch) {
-        // 60fps continuous subtle harmonic oscillation floating loop on mobile
+
         const t = performance.now() * 0.0012;
         this.targetTiltX = Math.sin(t * 0.8) * (this.maxTilt * 0.45);
         this.targetTiltY = Math.cos(t * 0.6) * (this.maxTilt * 0.45);
@@ -284,9 +266,6 @@
     }
   }
 
-  // =========================================================================
-  // 5. CLICK BURST & ENERGY PULSES
-  // =========================================================================
   let vortexRotator = null;
   let flameRotator = null;
 
@@ -330,9 +309,6 @@
     playHapticTone(659.25);
   };
 
-  // =========================================================================
-  // 6. HERO SLIDE CONTROLS
-  // =========================================================================
   const heroCities = ['OSAKA', 'KYOTO', 'TOKYO'];
   let currentHeroIndex = 0;
 
@@ -355,9 +331,6 @@
     playHapticTone(440.00);
   };
 
-  // =========================================================================
-  // 7. ITINERARY ACCORDION TOGGLE (A-01 to D-04)
-  // =========================================================================
   window.toggleProcessRow = function (stepId) {
     const el = document.getElementById(stepId);
     if (!el) return;
@@ -365,7 +338,6 @@
     const icon = document.getElementById(`icon-${stepId}`);
     const isOpen = el.style.maxHeight && el.style.maxHeight !== '0px';
 
-    // Close all rows
     ['step-1', 'step-2', 'step-3', 'step-4'].forEach(sId => {
       const row = document.getElementById(sId);
       const iconContainer = document.getElementById(`icon-${sId}`);
@@ -392,9 +364,6 @@
     }
   };
 
-  // =========================================================================
-  // 8. BOOKING DRAWER & PRICE ESTIMATOR MODAL
-  // =========================================================================
   let currentSeasonPrice = 3450;
   let guestCount = 1;
 
@@ -473,9 +442,6 @@
     playHapticTone(880.00);
   };
 
-  // =========================================================================
-  // 9. INCLUSIONS MODAL
-  // =========================================================================
   window.showIncludedInfo = function (title, description) {
     const modal = document.getElementById('infoModal');
     const card = document.getElementById('infoCard');
@@ -516,35 +482,176 @@
     }, 220);
   };
 
-  // =========================================================================
-  // 10. CONTACT FORM SUBMISSION
-  // =========================================================================
-  window.handleFormSubmit = function (e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitFormBtn');
-    const toast = document.getElementById('formToast');
-
-    if (btn) {
-      btn.innerHTML = `<span>Sending...</span>`;
-      btn.disabled = true;
-    }
-
-    playHapticTone(659.25);
-
-    setTimeout(() => {
-      if (toast) toast.classList.remove('hidden');
-      if (btn) {
-        btn.innerHTML = `<span>Sent ✓</span>`;
-      }
-      const form = document.getElementById('requestForm');
-      if (form) form.reset();
-      playHapticTone(784.00);
-    }, 600);
+  window.changeJourneyTravelers = function (delta) {
+    const input = document.getElementById('journeyTravelersInput');
+    const display = document.getElementById('journeyTravelersDisplay');
+    if (!input || !display) return;
+    let current = parseInt(input.value, 10) || 2;
+    current = Math.max(1, Math.min(12, current + delta));
+    input.value = current;
+    display.textContent = current;
+    playHapticTone(520 + current * 20);
   };
 
-  // =========================================================================
-  // 11. WEB AUDIO API ZEN SYNTHESIZER & HAPTIC EFFECTS
-  // =========================================================================
+  window.handleContactJourneySubmit = async function (e) {
+    e.preventDefault();
+    const nameInput = document.getElementById('contactFullName');
+    const emailInput = document.getElementById('contactEmailAddress');
+    const countryCodeInput = document.getElementById('contactCountryCode');
+    const phoneInput = document.getElementById('contactPhoneNumber');
+    const destInput = document.getElementById('contactDestinationSelect');
+    const dateInput = document.getElementById('contactTravelDateInput');
+    const travelersInput = document.getElementById('journeyTravelersInput');
+    const notesInput = document.getElementById('contactTripNotes');
+    const btn = document.getElementById('planJourneyBtn');
+    const btnText = document.getElementById('planJourneyBtnText');
+    const alertBox = document.getElementById('contactFormAlert');
+    const alertText = document.getElementById('contactFormAlertText');
+
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const destError = document.getElementById('destError');
+
+    if (nameError) nameError.classList.add('hidden');
+    if (emailError) emailError.classList.add('hidden');
+    if (destError) destError.classList.add('hidden');
+    if (alertBox) alertBox.classList.add('hidden');
+
+    let hasError = false;
+
+    if (!nameInput || !nameInput.value.trim()) {
+      if (nameError) nameError.classList.remove('hidden');
+      nameInput.focus();
+      hasError = true;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailInput || !emailRegex.test(emailInput.value.trim())) {
+      if (emailError) emailError.classList.remove('hidden');
+      if (!hasError) emailInput.focus();
+      hasError = true;
+    }
+
+    if (!destInput || !destInput.value) {
+      if (destError) destError.classList.remove('hidden');
+      if (!hasError) destInput.focus();
+      hasError = true;
+    }
+
+    if (hasError) {
+      playHapticTone(320);
+      return;
+    }
+
+    const payload = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      phone: phoneInput && phoneInput.value.trim() ? `${countryCodeInput ? countryCodeInput.value : ''} ${phoneInput.value.trim()}` : null,
+      destination: destInput.value,
+      travelDate: dateInput && dateInput.value ? dateInput.value : null,
+      travelers: parseInt(travelersInput ? travelersInput.value : '2', 10) || 2,
+      notes: notesInput ? notesInput.value.trim() : ''
+    };
+
+    if (btn) {
+      btn.disabled = true;
+      if (btnText) btnText.textContent = 'Submitting Enquiry...';
+      playHapticTone(659.25);
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error("Backend submission endpoint not active on current server process. Please restart 'node server.js' to activate /api/contact, or contact concierge@japantours.com directly.");
+        }
+        let errData;
+        try {
+          errData = await response.json();
+        } catch (_) {}
+        throw new Error((errData && errData.error) || `Submission failed with status ${response.status}. Please try again.`);
+      }
+
+      const resData = await response.json();
+
+      const modal = document.getElementById('journeySuccessModal');
+      const card = document.getElementById('journeySuccessCard');
+      const destDisplay = document.getElementById('successDestinationDisplay');
+      const dateDisplay = document.getElementById('successDateDisplay');
+      const travelersDisplay = document.getElementById('successTravelersDisplay');
+      const refIdDisplay = document.getElementById('successRefIdDisplay');
+
+      if (destDisplay) destDisplay.textContent = payload.destination;
+      if (dateDisplay) {
+        if (payload.travelDate) {
+          try {
+            const dateObj = new Date(payload.travelDate + 'T00:00:00');
+            dateDisplay.textContent = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+          } catch (_) {
+            dateDisplay.textContent = payload.travelDate;
+          }
+        } else {
+          dateDisplay.textContent = 'Flexible / To Be Arranged';
+        }
+      }
+      if (travelersDisplay) travelersDisplay.textContent = `${payload.travelers} ${payload.travelers === 1 ? 'Guest' : 'Guests'}`;
+      if (refIdDisplay) refIdDisplay.textContent = (resData.enquiry && resData.enquiry.id) || ('JP-' + Date.now().toString(36).toUpperCase());
+
+      const form = document.getElementById('contactJourneyForm');
+      if (form) form.reset();
+      if (travelersInput) travelersInput.value = '2';
+      const countDisplay = document.getElementById('journeyTravelersDisplay');
+      if (countDisplay) countDisplay.textContent = '2';
+
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        if (card) {
+          card.classList.remove('modal-exit');
+          card.classList.add('modal-enter');
+        }
+        document.body.style.overflow = 'hidden';
+      }
+
+      playHapticTone(784.00);
+      if (window.lucide) lucide.createIcons();
+
+    } catch (err) {
+      if (alertBox && alertText) {
+        alertText.textContent = err.message || 'Unable to connect to reservation service. Please verify your connection.';
+        alertBox.classList.remove('hidden');
+      }
+      playHapticTone(280.00);
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        if (btnText) btnText.textContent = 'Plan My Journey';
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+  };
+
+  window.closeJourneySuccessModal = function () {
+    const modal = document.getElementById('journeySuccessModal');
+    const card = document.getElementById('journeySuccessCard');
+    if (!modal || modal.classList.contains('hidden')) return;
+    if (card) {
+      card.classList.remove('modal-enter');
+      card.classList.add('modal-exit');
+    }
+    setTimeout(() => {
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+      if (card) card.classList.remove('modal-exit');
+      document.body.style.overflow = '';
+    }, 220);
+  };
+
   let audioCtx = null;
   let isPlaying = false;
   let zenTimer = null;
@@ -608,9 +715,6 @@
     osc.stop(audioCtx.currentTime + 3.2);
   }
 
-  // =========================================================================
-  // 12. INTERACTIVE LUXURY PHOTO LIGHTBOX ENGINE
-  // =========================================================================
   const photoData = {
     'hero-kimono': {
       src: 'assets/images/hero-kimono-fuji.jpg',
@@ -682,6 +786,18 @@
         { label: 'Included Privileges', val: 'Private Guide & Shrine Blessing Ceremony' },
         { label: 'Experience Type', val: 'Spiritual Heritage & Nature Hike' },
         { label: 'Group Access', val: 'Early Morning Private Transit' }
+      ]
+    },
+    'osaka-dotonbori': {
+      src: 'assets/images/osaka-dotonbori-night.jpg',
+      tag: 'Osaka • Dotonbori Canal Blue Hour',
+      title: 'Neon Odyssey: Dotonbori Twilight & Glico Glow',
+      description: 'Experience Osaka’s electric energy as twilight falls across Dotonbori canal. The iconic Glico Running Man and multi-story neon signs cast brilliant magenta, crimson, and golden reflections across the shimmering water, framing traditional street-food sanctuaries and riverside promenades.',
+      specs: [
+        { label: 'Recommended Time', val: 'Blue Hour & Evening (3 Hours)' },
+        { label: 'Included Privileges', val: 'Private Food Walk & Canal Cruise' },
+        { label: 'Experience Type', val: 'Night Photography & Street Gastronomy' },
+        { label: 'Group Access', val: 'VIP Reserved Canal-Side Table' }
       ]
     }
   };
@@ -757,29 +873,23 @@
     }, 240);
   };
 
-  // Global Key Listener for Modal Dismissal (Esc Key)
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closePhotoLightbox();
       closeBookingDrawer();
       closeInfoModal();
+      closeJourneySuccessModal();
     }
   });
 
-  // =========================================================================
-  // 13. DOM READY INITIALIZATION
-  // =========================================================================
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Start Tokyo live clock ticker
+
     initJSTClock();
 
-    // 2. Initialize scroll sequence
     initScrollAnimation();
 
-    // 3. Initialize cursor spotlight
     initSpotlight();
 
-    // 4. Initialize Hero Swirl Vortex Rotator
     vortexRotator = new RotatorFollower({
       containerId: 'vortexInteractiveZone',
       targetId: 'vortexTarget',
@@ -795,7 +905,6 @@
       }
     });
 
-    // 5. Initialize About Flame Petal Rotator
     flameRotator = new RotatorFollower({
       containerId: 'flameInteractiveZone',
       targetId: 'flameTarget',
@@ -804,7 +913,6 @@
       rotMultiplier: 0.65
     });
 
-    // 6. Lucide icons render
     if (window.lucide) {
       lucide.createIcons();
     }

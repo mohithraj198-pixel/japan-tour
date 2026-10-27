@@ -1,0 +1,13 @@
+[
+  {
+    "id": "JP-MVQTFNHP",
+    "timestamp": "2026-10-27T15:03:42.253Z",
+    "name": "Alexander Vance",
+    "email": "alexander.vance@example.com",
+    "phone": "+81 90-1234-5678",
+    "destination": "Osaka",
+    "travelDate": "2026-11-20",
+    "travelers": 2,
+    "notes": "Looking forward to blue hour photography in Dotonbori."
+  }
+]

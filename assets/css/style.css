@@ -1,11 +1,6 @@
-/* =========================================================================
-   JAPAN TOURS • ULTRA-LUXURY DESIGN SYSTEM STYLESHEET
-   Pure Solid Pitch-Black (#000000) Canvas & DM Sans Typography
-   ========================================================================= */
 
 @charset "UTF-8";
 
-/* Global Font Enforcement */
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -29,9 +24,6 @@ body {
   position: relative;
 }
 
-/* =========================================================================
-   1. FIXED BACKGROUND CANVAS ANIMATION LAYER
-   ========================================================================= */
 #canvas-container {
   position: fixed;
   top: 0;
@@ -64,9 +56,6 @@ body {
   z-index: 1;
 }
 
-/* =========================================================================
-   2. GIANT HOLLOW BACKDROP OUTLINE TYPOGRAPHY (Strictly 0.08 - 0.12 Opacity)
-   ========================================================================= */
 .stroke-watermark {
   -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.22);
   color: transparent;
@@ -78,10 +67,6 @@ body {
   z-index: 0;
 }
 
-/* =========================================================================
-   3. PRIMARY & SECONDARY CTA BUTTONS
-   ========================================================================= */
-/* High-contrast Primary Button (Solid Pure White #FFFFFF) */
 .opticore-primary-btn {
   position: relative;
   display: inline-flex;
@@ -123,7 +108,6 @@ body {
   transform: translateX(3px) rotate(-45deg);
 }
 
-/* Secondary Semi-Translucent Ghost Pill Button */
 .opticore-pill-btn {
   position: relative;
   display: inline-flex;
@@ -167,7 +151,6 @@ body {
   transform: translateX(3px) rotate(-45deg);
 }
 
-/* Capsule Tag */
 .opticore-capsule-tag {
   display: inline-flex;
   align-items: center;
@@ -191,7 +174,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Form Input Elements */
 .opticore-input {
   background: rgba(9, 9, 9, 0.85);
   backdrop-filter: blur(12px);
@@ -211,9 +193,6 @@ body {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
 }
 
-/* =========================================================================
-   4. LUXURY IMAGE EDGE BLENDING (Zero Harsh Rectangular Cutoffs)
-   ========================================================================= */
 .img-luxury-blend {
   position: relative;
   overflow: hidden;
@@ -235,7 +214,6 @@ body {
   border-radius: inherit;
 }
 
-/* Interactive Photo Card Hover */
 .photo-card-clickable {
   cursor: pointer;
   position: relative;
@@ -252,7 +230,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Glass Card Styling */
 .glass-card {
   background: rgba(8, 8, 8, 0.85);
   backdrop-filter: blur(16px);
@@ -264,16 +241,12 @@ body {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* Iridescent Border */
 .iridescent-border {
   background: linear-gradient(135deg, rgba(255, 0, 127, 0.5), rgba(138, 43, 226, 0.7), rgba(0, 240, 255, 0.5));
   padding: 1px;
   border-radius: 28px;
 }
 
-/* =========================================================================
-   5. INTERACTIVE CURSOR SPOTLIGHT & MOBILE FALLBACK
-   ========================================================================= */
 #cursor-spotlight {
   pointer-events: none;
   position: fixed;
@@ -292,9 +265,6 @@ body {
   }
 }
 
-/* =========================================================================
-   6. 3D PERSPECTIVE RIG & FLUID SCULPTURE ANIMATIONS
-   ========================================================================= */
 .rotator-3d-wrap {
   perspective: 1200px;
   transform-style: preserve-3d;
@@ -306,7 +276,6 @@ body {
   transition: transform 0.08s ease-out;
 }
 
-/* Rotating Seal */
 @keyframes spin-seal {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -316,7 +285,6 @@ body {
   animation: spin-seal 28s linear infinite;
 }
 
-/* Spring Pop-Up Animation for Fluid Sculptures */
 @keyframes elasticPopUp {
   0% {
     opacity: 0;
@@ -343,7 +311,6 @@ body {
   animation: elasticPopUp 1.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-/* Continuous Organic Floating & Breathing */
 @keyframes orbCoreBreathe {
   0%, 100% { transform: scale(1); opacity: 0.95; }
   50% { transform: scale(1.06); opacity: 1; filter: drop-shadow(0 0 35px rgba(255, 0, 127, 0.6)); }
@@ -380,7 +347,6 @@ body {
   animation: dotOrbit2 4.2s ease-in-out infinite;
 }
 
-/* Energy Shockwave Ring */
 @keyframes shockwaveRing {
   0% { transform: translate(-50%, -50%) scale(0.6); opacity: 1; border-width: 3px; }
   100% { transform: translate(-50%, -50%) scale(2.8); opacity: 0; border-width: 0.5px; }
@@ -390,9 +356,6 @@ body {
   animation: shockwaveRing 0.85s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
 }
 
-/* =========================================================================
-   7. SPRING MODAL DIALOG TRANSITIONS (Cubic-Bezier Physics)
-   ========================================================================= */
 @keyframes modalSpringIn {
   0% {
     opacity: 0;
@@ -427,7 +390,6 @@ body {
   animation: modalSpringOut 0.22s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
-/* Custom Sleek Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
